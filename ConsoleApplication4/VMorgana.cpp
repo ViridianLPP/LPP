@@ -45,7 +45,7 @@ void Menu()
 
 	ComboQ = QMenu->CheckBox("Use Q", true);
 	GapcloseQ = QMenu->CheckBox("Q on Gapcloser", true);
-	AutoLogicQ = QMenu->CheckBox("Use Q on CC", true);
+	AutoLogicQ = QMenu->CheckBox("Use Q on CC", false);
 
 
 	ComboW = WMenu->CheckBox("Use W", true);
@@ -296,6 +296,11 @@ void AutoWLogic()
 		if (W->IsReady())
 		{
 			AutoWLogic();
+		}
+
+		if (Q->IsReady())
+		{
+			AutoQLogic();
 		}
 	}
 
