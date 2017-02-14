@@ -92,6 +92,8 @@ void Combo()
 		if (Q->IsReady())
 		{
 			auto target = GTargetSelector->FindTarget(QuickestKill, SpellDamage, Q->Range());
+			if ((target != nullptr) && target->IsValidTarget())
+
 			Q->CastOnTarget(target, kHitChanceVeryHigh);
 
 		}
@@ -101,6 +103,7 @@ void Combo()
 		if (W->IsReady())
 		{
 			auto target = GTargetSelector->FindTarget(QuickestKill, SpellDamage, W->Range());
+			if ((target != nullptr) && target->IsValidTarget())
 			W->CastOnPosition(target->ServerPosition());
 		}
 	}
@@ -129,7 +132,7 @@ void Combo()
 			};
 
 			if (EnemiesInRangeOfHero(GEntityList->Player(), 600) >= ComboREnemies->GetInteger())
-				R->CastOnTarget(target);
+				R->CastOnPlayer();
 		}
 	}
 }
@@ -279,11 +282,7 @@ void AutoWLogic()
 
 			Combo();
 
-		}
-
-
-
-
+		}	
 
 		if (GOrbwalking->GetOrbwalkingMode() == kModeLaneClear)
 
@@ -351,6 +350,7 @@ void AutoWLogic()
 
 	}
 
+	
 
 
 
