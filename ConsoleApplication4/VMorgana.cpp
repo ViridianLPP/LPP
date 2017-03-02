@@ -210,7 +210,12 @@ void AutoWLogic()
 
 	PLUGIN_EVENT(void) OnDash(UnitDash* Args)
 	{
-		if (Q->IsReady() && GetDistancePos(GEntityList->Player()->ServerPosition(), Args->EndPosition) < Q->Range()) { Q->CastOnPosition(Args->EndPosition); }
+		if (Q->IsReady() 
+			&& Args->Source->GetTeam() != GEntityList->Player()->GetTeam()
+			&& GetDistancePos(GEntityList->Player()->ServerPosition(), Args->EndPosition) < Q->Range()) 
+		{ 
+			Q->CastOnPosition(Args->EndPosition); 
+		}
 	}
 
 	PLUGIN_EVENT(void) OnGapCloser(GapCloserSpell const& Args)
