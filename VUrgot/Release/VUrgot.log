@@ -1,8 +1,9 @@
-﻿     Creating library C:\Users\Moos Toet\documents\visual studio 2015\Projects\VUrgot\Release\VUrgot.lib and object C:\Users\Moos Toet\documents\visual studio 2015\Projects\VUrgot\Release\VUrgot.exp
+﻿  VUrgot.cpp
+     Creating library C:\Users\Moos Toet\documents\visual studio 2015\Projects\VUrgot\Release\VUrgot.lib and object C:\Users\Moos Toet\documents\visual studio 2015\Projects\VUrgot\Release\VUrgot.exp
   Generating code
-  0 of 45 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  4 of 45 functions ( 8.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   VUrgot.vcxproj -> C:\Users\Moos Toet\documents\visual studio 2015\Projects\VUrgot\Release\VUrgot.dll
   VUrgot.vcxproj -> C:\Users\Moos Toet\documents\visual studio 2015\Projects\VUrgot\Release\VUrgot.pdb (Full PDB)

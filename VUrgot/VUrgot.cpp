@@ -26,6 +26,7 @@ IMenuOption* DrawR;
 IMenuOption* DrawReady;
 
 ISpell2* Q;
+ISpell2* Q2;
 ISpell2* W;
 ISpell2* E;
 ISpell2* R;
@@ -66,6 +67,7 @@ void Menu()
 void LoadSpells()
 {
 	Q = GPluginSDK->CreateSpell2(kSlotQ, kLineCast, false, false, static_cast<eCollisionFlags>(kCollidesWithMinions | kCollidesWithYasuoWall));
+	Q2 = GPluginSDK->CreateSpell2(kSlotQ, kLineCast, true, false, kCollidesWithYasuoWall);
 	W = GPluginSDK->CreateSpell2(kSlotE, kCircleCast, false, false, kCollidesWithNothing);
 	E = GPluginSDK->CreateSpell2(kSlotE, kCircleCast, false, true, kCollidesWithYasuoWall);
 	R = GPluginSDK->CreateSpell2(kSlotR, kTargetCast, false, false, kCollidesWithNothing);
@@ -110,7 +112,7 @@ void Combo()
 				if (Target->HasBuff("urgotcorrosivedebuff"))
 
 				{
-					Q->CastOnTarget(Target);
+					Q2->CastOnPosition(Target->GetPosition());
 				}
 			}
 
@@ -119,8 +121,10 @@ void Combo()
 
 	if (ComboW->Enabled() && W->IsReady() && !(Q->IsReady()))
 	{
-		if (GetEnemiesInRange(455) >= 1);
-		W->CastOnPlayer();
+		if (GetEnemiesInRange(455) >= 1)
+		{
+			W->CastOnPlayer();
+		}
 	}
 
 	if (ComboE->Enabled() && E->IsReady())
